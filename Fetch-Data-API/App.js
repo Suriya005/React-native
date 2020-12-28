@@ -11,7 +11,7 @@ export default class App extends Component {
     }
 
     componentDidMount(){
-      fetch('https://jsonplaceholder.typicode.com/posts')
+      fetch('https://covid19.th-stat.com/api/open/today')
       .then((response) => response.json())
       .then((responseJson) =>{
         this.setState({
@@ -25,7 +25,7 @@ export default class App extends Component {
       return(
         <TouchableOpacity onPress= {() => alert(item.body)} >
           <View style={styles.item}>
-            <Text>{item.id + " ) " + item.title}</Text>
+            <Text>{item.Confirmed + " ) " + item.Recovered}</Text>
           </View>
         </TouchableOpacity>
       )
@@ -50,10 +50,7 @@ export default class App extends Component {
           />
         </View>
       )
-    }
-
-    
-    
+    }    
   }
 }
 
